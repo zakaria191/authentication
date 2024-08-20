@@ -38,7 +38,7 @@ app.post('/register', (req, res) => {
     return res.status(400).send('Username already taken.');
   }
 
-  // Hash the password (you should use a more secure method)
+  // Hash the password
   const hashedPassword = bcrypt.hashSync(password, 10);
 
   // Store the user's credentials in the array
@@ -97,7 +97,7 @@ app.get('/users', (req, res) => {
     return res.status(401).send('Unauthorized. Please log in.');
   }
 
-  // Return the list of registered users (for demonstration purposes only)
+  // Return the list of registered users
   res.json(registeredUsers);
 });
 
